@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Tree View -->
+    <record id="view_stock_quantity_period_tree" model="ir.ui.view">
+        <field name="name">stock.quantity.period.report.tree</field>
+        <field name="model">stock.quantity.period.report</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="product_id"/>
+                <field name="location_id"/>
+                <field name="date_from"/>
+                <field name="date_to"/>
+                <field name="quantity"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Form View -->
+    <record id="view_stock_quantity_period_form" model="ir.ui.view">
+        <field name="name">stock.quantity.period.report.form</field>
+        <field name="model">stock.quantity.period.report</field>
+        <field name="arch" type="xml">
+            <form string="Stock Quantity Period Report">
+                <group>
+                    <field name="product_id"/>
+                    <field name="location_id"/>
+                    <field name="date_from"/>
+                    <field name="date_to"/>
+                    <field name="quantity" readonly="1"/>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <!-- Action -->
+    <record id="action_stock_quantity_period_report" model="ir.actions.act_window">
+        <field name="name">Bao cao ton kho theo</field>
+        <field name="res_model">stock.quantity.period.report</field>
+        <field name="view_mode">tree,form</field>
+        <field name="type">ir.actions.act_window</field>
+    </record>
+
+    <!-- Menu -->
+    <menuitem id="menu_stock_quantity_period_report_root"
+              name="T?n kho theo k?"
+              parent="stock.menu_stock_warehouse_mgmt"
+              sequence="100"/>
+
+    <menuitem id="menu_stock_quantity_period_report"
+              name="Bao cao t?n kho theo k?"
+              parent="menu_stock_quantity_period_report_root"
+              action="action_stock_quantity_period_report"
+              sequence="10"/>
+</odoo>

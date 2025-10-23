@@ -1,0 +1,50 @@
+<!-- my_product_tags/security/product_rule.xml -->
+<odoo>
+
+  <!-- User thường thấy sản phẩm nếu:
+       - Category CHƯA gắn ai  (categ_id.assigned_user_ids = False)  => public
+       - HOẶC category của sản phẩm thuộc danh sách user được gắn
+       - HOẶC ngoại lệ theo từng sản phẩm (allowed_user_ids)
+  -->
+  <record id="rule_pt_by_category_or_public_or_exception" model="ir.rule">
+    <field name="name">PT – public category OR assigned OR product exception</field>
+    <field name="model_id" ref="product.model_product_template"/>
+    <field name="domain_force"><![CDATA[
+      ['|','|',
+        ('categ_id.assigned_user_ids','=',False),
+        ('categ_id','in', user.product_domain_ids.ids),
+        ('allowed_user_ids','in',[user.id])
+      ]
+    ]]></field>
+    <field name="groups" eval="[(4, ref('base.group_user'))]"/>
+  </record>
+
+  <record id="rule_pp_by_category_or_public_or_exception" model="ir.rule">
+    <field name="name">PP – public category OR assigned OR product exception</field>
+    <field name="model_id" ref="product.model_product_product"/>
+    <field name="domain_force"><![CDATA[
+      ['|','|',
+        ('product_tmpl_id.categ_id.assigned_user_ids','=',False),
+        ('product_tmpl_id.categ_id','in', user.product_domain_ids.ids),
+        ('product_tmpl_id.allowed_user_ids','in',[user.id])
+      ]
+    ]]></field>
+    <field name="groups" eval="[(4, ref('base.group_user'))]"/>
+  </record>
+
+  <!-- Admin (Settings) luôn xem hết -->
+  <record id="rule_pt_admin_all" model="ir.rule">
+    <field name="name">PT – admin see all</field>
+    <field name="model_id" ref="product.model_product_template"/>
+    <field name="domain_force">[(1,'=',1)]</field>
+    <field name="groups" eval="[(4, ref('base.group_system'))]"/>
+  </record>
+
+  <record id="rule_pp_admin_all" model="ir.rule">
+    <field name="name">PP – admin see all</field>
+    <field name="model_id" ref="product.model_product_product"/>
+    <field name="domain_force">[(1,'=',1)]</field>
+    <field name="groups" eval="[(4, ref('base.group_system'))]"/>
+  </record>
+
+</odoo>

@@ -1,0 +1,11 @@
+<odoo>
+ <record id="x_ytv_view_partner_form_share_company_fix" model="ir.ui.view">
+    <field name="name">res.partner.form.x_ytv_allowed_companies.fix</field>
+    <field name="model">res.partner</field>
+    <field name="inherit_id" ref="base.view_partner_form"/>
+    <field name="arch" type="xml">
+        <field name="company_id" position="after">
+            <field name="x_ytv_allowed_company_ids"/>
+        </field>
+    </field>
+</record></odoo>

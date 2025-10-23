@@ -1,0 +1,17 @@
+<!-- my_product_tags/views/res_users_views.xml -->
+<odoo>
+  <record id="view_users_form_inherit_product_domains" model="ir.ui.view">
+    <field name="name">res.users.form.inherit.product.domains</field>
+    <field name="model">res.users</field>
+    <field name="inherit_id" ref="base.view_users_form"/>
+    <field name="arch" type="xml">
+      <xpath expr="//sheet/notebook" position="inside">
+        <page string="Product Access">
+          <group>
+            <field name="product_domain_ids" widget="many2many_tags"/>
+          </group>
+        </page>
+      </xpath>
+    </field>
+  </record>
+</odoo>

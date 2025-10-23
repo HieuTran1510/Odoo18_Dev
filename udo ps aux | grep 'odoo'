@@ -1,0 +1,26 @@
+[0;1;32m●[0m odoo18_test.service - Odoo18_test
+     Loaded: loaded (]8;;file://103.1.237.62/etc/systemd/system/odoo18_test.service/etc/systemd/system/odoo18_test.service]8;;; [0;1;32menabled[0m; preset: [0;1;32menabled[0m)
+     Active: [0;1;32mactive (running)[0m since Mon 2025-07-07 14:25:53 +07; 3min 24s ago
+       Docs: ]8;;http://www.odoo.comhttp://www.odoo.com]8;;
+   Main PID: 1756219 (python3.12)
+      Tasks: 10 (limit: 38427)
+     Memory: 296.1M (peak: 305.0M)
+        CPU: 3min 33.800s
+     CGroup: /system.slice/odoo18_test.service
+             ├─[0;38;5;245m1756219 /opt/odoo18_test/venv/bin/python3.12 /opt/odoo18_test/odoo-bin -c /etc/odoo18_test.conf[0m
+             ├─[0;38;5;245m1756224 /opt/odoo18_test/venv/bin/python3.12 /opt/odoo18_test/odoo-bin -c /etc/odoo18_test.conf[0m
+             ├─[0;38;5;245m1756225 /opt/odoo18_test/venv/bin/python3.12 /opt/odoo18_test/odoo-bin -c /etc/odoo18_test.conf[0m
+             ├─[0;38;5;245m1756228 /opt/odoo18_test/venv/bin/python3.12 /opt/odoo18_test/odoo-bin -c /etc/odoo18_test.conf[0m
+             ├─[0;38;5;245m1756230 /opt/odoo18_test/venv/bin/python3.12 /opt/odoo18_test/odoo-bin -c /etc/odoo18_test.conf[0m
+             └─[0;38;5;245m1756774 /opt/odoo18_test/venv/bin/python3.12 /opt/odoo18_test/odoo-bin gevent -c /etc/odoo18_test.conf[0m
+
+Jul 07 14:29:16 103.1.237.62 python3.12[1756771]:     return self._sock.bind(address)
+Jul 07 14:29:16 103.1.237.62 python3.12[1756771]:            ^^^^^^^^^^^^^^^^^^^^^^^^
+Jul 07 14:29:16 103.1.237.62 python3.12[1756771]: OSError: [Errno 98] Address already in use: ('0.0.0.0', 8072)
+Jul 07 14:29:17 103.1.237.62 python3.12[1756774]: ERROR: couldn't create the logfile directory. Logging to the standard output.
+Jul 07 14:29:17 103.1.237.62 python3.12[1756774]: 2025-07-07 07:29:17,600 1756774 INFO ? odoo: Odoo version 18.0-20250421
+Jul 07 14:29:17 103.1.237.62 python3.12[1756774]: 2025-07-07 07:29:17,600 1756774 INFO ? odoo: Using configuration file at /etc/odoo18_test.conf
+Jul 07 14:29:17 103.1.237.62 python3.12[1756774]: 2025-07-07 07:29:17,600 1756774 INFO ? odoo: addons paths: ['/opt/odoo18_test/odoo/addons', '/opt/odoo18_test/.local/share/Odoo/addons/18.0', '/opt/custom/enterprise', '/opt/custom/ytv18-dev']
+Jul 07 14:29:17 103.1.237.62 python3.12[1756774]: 2025-07-07 07:29:17,600 1756774 INFO ? odoo: database: odoo18_test@103.1.237.62:5432
+Jul 07 14:29:17 103.1.237.62 python3.12[1756774]: 2025-07-07 07:29:17,751 1756774 INFO ? odoo.addons.base.models.ir_actions_report: Will use the Wkhtmltopdf binary at /usr/local/bin/wkhtmltopdf
+Jul 07 14:29:17 103.1.237.62 python3.12[1756774]: 2025-07-07 07:29:17,773 1756774 INFO ? odoo.addons.base.models.ir_actions_report: Will use the Wkhtmltoimage binary at /usr/local/bin/wkhtmltoimage

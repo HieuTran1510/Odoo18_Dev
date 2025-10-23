@@ -1,0 +1,37 @@
+<odoo>
+    <!-- Tất cả user nội bộ (bao gồm admin) đều theo cùng một rule -->
+    <record id="x_ytv_res_partner_rule_share" model="ir.rule">
+
+        <!-- Thông tin cơ bản -->
+        <field name="name">res.partner: Partner Sharing Multi-company</field>
+        <field name="model_id" ref="base.model_res_partner"/>
+        <field name="groups" eval="[(4, ref('base.group_user'))]"/>
+        <field name="global" eval="False"/>
+
+        <!-- Quyền áp dụng domain -->
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_unlink" eval="True"/>
+        <field name="perm_create" eval="True"/>
+
+        <!-- Domain lọc dữ liệu -->
+        <field name="domain_force">
+            [
+                '|',
+                    ('user_ids.share', '=', False),
+                '|',
+                    '&amp;',
+                        ('company_id', '=', False),
+                        ('x_ytv_allowed_company_ids', '=', False),
+                '|',
+                    '&amp;',
+                        ('company_id', '=', False),
+                        ('x_ytv_allowed_company_ids', 'in', company_ids),
+                    '&amp;',
+                        ('company_id', '!=', False),
+                        ('company_id', 'in', company_ids)
+            ]
+        </field>
+
+    </record>
+</odoo>

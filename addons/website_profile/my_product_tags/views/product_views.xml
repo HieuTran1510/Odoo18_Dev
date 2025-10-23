@@ -1,0 +1,13 @@
+<!-- my_product_tags/views/product_views.xml -->
+<odoo>
+  <record id="product_template_form_view_inherit_access" model="ir.ui.view">
+    <field name="name">product.template.form.inherit.access</field>
+    <field name="model">product.template</field>
+    <field name="inherit_id" ref="product.product_template_form_view"/>
+    <field name="arch" type="xml">
+      <field name="categ_id" position="after">
+        <field name="allowed_user_ids" widget="many2many_tags"/>
+      </field>
+    </field>
+  </record>
+</odoo>
