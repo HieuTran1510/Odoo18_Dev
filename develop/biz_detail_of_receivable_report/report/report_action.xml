@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- <openerp> -->
+<odoo>
+    <data>
+        <record id="paperformat_a4_contract" model="report.paperformat">
+            <field name="name">A4 Landscape Contract</field>
+            <field name="default" eval="True"/>
+            <field name="format">A4</field>
+            <field name="page_height">0</field>
+            <field name="page_width">0</field>
+            <field name="orientation">Landscape</field>
+            <field name="margin_top">17.50</field>
+            <field name="margin_bottom">30</field>
+            <field name="margin_left">8</field>
+            <field name="margin_right">8</field>
+            <field name="header_line" eval="False"/>
+            <field name="header_spacing">5</field>
+            <field name="dpi">90</field>
+        </record>
+        <record id="paperformat_a4" model="report.paperformat">
+            <field name="name">A4 Portrait</field>
+            <field name="default" eval="True"/>
+            <field name="format">A4</field>
+            <field name="page_height">0</field>
+            <field name="page_width">0</field>
+            <field name="orientation">Portrait</field>
+            <field name="margin_top">5</field>
+            <field name="margin_bottom">9</field>
+            <field name="margin_left">5</field>
+            <field name="margin_right">5</field>
+            <field name="header_line" eval="False"/>
+            <field name="header_spacing">5</field>
+            <field name="dpi">80</field>
+        </record>
+        <record id="account_reports_report_pdf" model="ir.actions.report">
+            <field name="name">Aggregate accounts receivable</field>
+            <field name="model">account.reports.wizard</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">biz_detail_of_receivable_report.report_account_reports</field>
+            <field name="report_file">biz_detail_of_receivable_report.report_account_reports</field>
+            <field name="print_report_name">'Aggregate accounts receivable - %s' % (datetime.datime.now())</field>
+            <field name="binding_model_id" ref="model_account_reports_wizard"/>
+            <field name="binding_type">report</field>
+            <field name="paperformat_id" ref="paperformat_a4_contract"/>
+        </record>
+        <record id="debt_notification_report_pdf" model="ir.actions.report">
+            <field name="name">Debt Notification</field>
+            <field name="model">debt.notif.wizard</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">biz_detail_of_receivable_report.debt_notif_reports</field>
+            <field name="report_file">biz_detail_of_receivable_report.debt_notif_reports</field>
+            <field name="print_report_name">'Debt Notification - %s' % (datetime.datime.now())</field>
+            <field name="binding_model_id" ref="model_debt_notif_wizard"/>
+            <field name="binding_type">report</field>
+            <field name="paperformat_id" ref="paperformat_a4"/>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,16 @@
+<odoo>
+    <record id="view_partner_form_credit_limit" model="ir.ui.view">
+        <field name="name">res.partner.form.credit.limit</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <page name="accounting" position="inside">
+                <group string="Credit Control">
+                    <field name="credit" readonly="1"/>
+                    <field name="credit_limit_currency_id"/>
+                    <field name="credit_limit"/>
+                </group>
+            </page>
+        </field>
+    </record>
+</odoo>

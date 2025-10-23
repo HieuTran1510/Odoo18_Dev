@@ -1,0 +1,543 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* biz_detail_of_receivable_report
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-24 06:34+0000\n"
+"PO-Revision-Date: 2024-04-24 06:34+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: biz_detail_of_receivable_report
+#: model:ir.actions.report,print_report_name:biz_detail_of_receivable_report.account_reports_report_pdf
+msgid "'Aggregate accounts receivable - %s' % (datetime.datime.now())"
+msgstr ""
+
+#. module: biz_detail_of_receivable_report
+#: model:ir.actions.report,print_report_name:biz_detail_of_receivable_report.debt_notification_report_pdf
+msgid "'Debt Notification - %s' % (datetime.datime.now())"
+msgstr ""
+
+#. module: biz_detail_of_receivable_report
+#: model_terms:ir.ui.view,arch_db:biz_detail_of_receivable_report.report_account_reports
+msgid "(Ký, họ tên)"
+msgstr ""
+
+#. module: biz_detail_of_receivable_report
+#: model_terms:ir.ui.view,arch_db:biz_detail_of_receivable_report.debt_notif_reports
+msgid "<b class=\"text-uppercase font-weight-bold\">KẾ TOÁN CÔNG NỢ</b>"
+msgstr ""
+
+#. module: biz_detail_of_receivable_report
+#: model_terms:ir.ui.view,arch_db:biz_detail_of_receivable_report.debt_notif_reports
+msgid "<b class=\"text-uppercase font-weight-bold\">KẾ TOÁN TRƯỞNG</b>"
+msgstr ""
+
+#. module: biz_detail_of_receivable_report
+#: model_terms:ir.ui.view,arch_db:biz_detail_of_receivable_report.debt_notif_reports
+msgid "<b class=\"text-uppercase font-weight-bold\">NHÂN VIÊN BÁN HÀNG</b>"
+msgstr ""
+
+#. module: biz_detail_of_receivable_report
+#: model_terms:ir.ui.view,arch_db:biz_detail_of_receivable_report.debt_notif_reports
+msgid "<b class=\"text-uppercase font-weight-bold\">PHÓ GIÁM ĐỐC</b>"
+msgstr ""
+
+#. module: biz_detail_of_receivable_report
+#: model_terms:ir.ui.view,arch_db:biz_detail_of_receivable_report.debt_notif_reports
+msgid "<b>CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM</b><br/>"
+msgstr ""
+
+#. module: biz_detail_of_receivable_report
+#: model_terms:ir.ui.view,arch_db:biz_detail_of_receivable_report.debt_notif_reports
+msgid "<b>THÔNG BÁO CÔNG NỢ</b>"
+msgstr ""
+
+#. module: biz_detail_of_receivable_report
+#: model_terms:ir.ui.view,arch_db:biz_detail_of_receivable_report.debt_notif_reports
+msgid ""
+"<b>Độc lập - Tự do - Hạnh phúc</b><br/>\n"
+"\t\t\t\t\t\t\t\t\t<i>---------- o0o ----------</i>"
+msgstr ""
+
+#. module: biz_detail_of_receivable_report
+#: model_terms:ir.ui.view,arch_db:biz_detail_of_receivable_report.debt_notif_reports
+#: model_terms:ir.ui.view,arch_db:biz_detail_of_receivable_report.report_account_reports
+msgid "<strong>Đơn vị: </strong>"
+msgstr ""
+
+#. module: biz_detail_of_receivable_report
+#: model_terms:ir.ui.view,arch_db:biz_detail_of_receivable_report.debt_notif_reports
+#: model_terms:ir.ui.view,arch_db:biz_detail_of_receivable_report.report_account_reports
+msgid "<strong>Địa chỉ: </strong>"
+msgstr ""
+
+#. module: biz_detail_of_receivable_report
+#: model:account.report.column,name:biz_detail_of_receivable_report.partner_ledger_report_account_code
+msgid "Account"
+msgstr "Tài khoản"
+
+#. module: biz_detail_of_receivable_report
+#: model:ir.model,name:biz_detail_of_receivable_report.model_report_biz_detail_of_receivable_report_report_account_reports
+msgid "Account Reports Report"
+msgstr ""
+
+#. module: biz_detail_of_receivable_report
+#: model:ir.model,name:biz_detail_of_receivable_report.model_account_report
+msgid "Accounting Report"
+msgstr "Báo cáo kế toán"
+
+#. module: biz_detail_of_receivable_report
+#: model:ir.actions.report,name:biz_detail_of_receivable_report.account_reports_report_pdf
+msgid "Aggregate accounts receivable"
+msgstr ""
+
+#. module: biz_detail_of_receivable_report
+#. odoo-python
+#: code:addons/biz_detail_of_receivable_report/models/account_report.py:0
+#, python-format
+msgid "All Payable"
+msgstr ""
+
+#. module: biz_detail_of_receivable_report
+#. odoo-python
+#: code:addons/biz_detail_of_receivable_report/models/account_report.py:0
+#, python-format
+msgid "All Receivable"
+msgstr ""
+
+#. module: biz_detail_of_receivable_report
+#. odoo-python
+#: code:addons/biz_detail_of_receivable_report/models/account_report.py:0
+#, python-format
+msgid "All receivable/payable"
+msgstr ""
+
+#. module: biz_detail_of_receivable_report
+#: model:account.report.column,name:biz_detail_of_receivable_report.partner_ledger_report_amount_currency
+msgid "Amount Currency"
+msgstr "Số tiền theo loại tiền"
+
+#. module: biz_detail_of_receivable_report
+#: model:account.report.column,name:biz_detail_of_receivable_report.partner_ledger_report_balance
+msgid "Balance"
+msgstr "Số dư"
+
+#. module: biz_detail_of_receivable_report
+#: model_terms:ir.ui.view,arch_db:biz_detail_of_receivable_report.debt_notif_reports
+msgid "BÊN BÁN:"
+msgstr ""
+
+#. module: biz_detail_of_receivable_report
+#: model_terms:ir.ui.view,arch_db:biz_detail_of_receivable_report.debt_notif_reports
+msgid "BÊN MUA:"
+msgstr ""
+
+#. module: biz_detail_of_receivable_report
+#: model_terms:ir.ui.view,arch_db:biz_detail_of_receivable_report.report_account_reports
+msgid "BẢNG TỔNG HỢP CÔNG NỢ PHẢI THU KHÁCH HÀNG"
+msgstr ""
+
+#. module: biz_detail_of_receivable_report
+#: model_terms:ir.ui.view,arch_db:biz_detail_of_receivable_report.debt_notif_reports
+msgid "Bằng chữ:"
+msgstr ""
+
+#. module: biz_detail_of_receivable_report
+#: model:ir.model.fields,field_description:biz_detail_of_receivable_report.field_account_reports_wizard__create_uid
+#: model:ir.model.fields,field_description:biz_detail_of_receivable_report.field_debt_notif_wizard__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: biz_detail_of_receivable_report
+#: model:ir.model.fields,field_description:biz_detail_of_receivable_report.field_account_reports_wizard__create_date
+#: model:ir.model.fields,field_description:biz_detail_of_receivable_report.field_debt_notif_wizard__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: biz_detail_of_receivable_report
+#: model:account.report.column,name:biz_detail_of_receivable_report.partner_ledger_report_credit
+msgid "Credit"
+msgstr "Số dư có"
+
+#. module: biz_detail_of_receivable_report
+#: model:ir.model.fields,field_description:biz_detail_of_receivable_report.field_account_report__custom_button_receiveble
+msgid "Custom button"
+msgstr ""
+
+#. module: biz_detail_of_receivable_report
+#. odoo-python
+#: code:addons/biz_detail_of_receivable_report/models/account_report.py:0
+#, python-format
+msgid "Customer and Vendor"
+msgstr "Là khách hàng lẫn NCC"
+
+#. module: biz_detail_of_receivable_report
+#: model_terms:ir.ui.view,arch_db:biz_detail_of_receivable_report.report_account_reports
+msgid "Có"
+msgstr ""
+
+#. module: biz_detail_of_receivable_report
+#. odoo-python
+#: code:addons/biz_detail_of_receivable_report/models/account_report.py:0
+#, python-format
+msgid "DEBT NOTICE"
+msgstr "THÔNG BÁO CÔNG NỢ"
+
+#. module: biz_detail_of_receivable_report
+#: model:ir.model.fields,field_description:biz_detail_of_receivable_report.field_account_reports_wizard__data
+#: model:ir.model.fields,field_description:biz_detail_of_receivable_report.field_debt_notif_wizard__data
+msgid "Data"
+msgstr ""
+
+#. module: biz_detail_of_receivable_report
+#: model:account.report.column,name:biz_detail_of_receivable_report.partner_ledger_report_debit
+msgid "Debit"
+msgstr "Nợ"
+
+#. module: biz_detail_of_receivable_report
+#: model:ir.actions.report,name:biz_detail_of_receivable_report.debt_notification_report_pdf
+msgid "Debt Notification"
+msgstr "Thông báo công nợ"
+
+#. module: biz_detail_of_receivable_report
+#: model:ir.model,name:biz_detail_of_receivable_report.model_report_biz_detail_of_receivable_report_debt_notif_reports
+msgid "Debt Notification Report"
+msgstr "Thông báo công nợ"
+
+#. module: biz_detail_of_receivable_report
+#: model:ir.model.fields,field_description:biz_detail_of_receivable_report.field_account_reports_wizard__display_name
+#: model:ir.model.fields,field_description:biz_detail_of_receivable_report.field_debt_notif_wizard__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: biz_detail_of_receivable_report
+#: model_terms:ir.ui.view,arch_db:biz_detail_of_receivable_report.debt_notif_reports
+msgid "Diễn giải"
+msgstr ""
+
+#. module: biz_detail_of_receivable_report
+#: model:account.report.column,name:biz_detail_of_receivable_report.partner_ledger_report_date_maturity
+msgid "Due Date"
+msgstr "Ngày đến hạn"
+
+#. module: biz_detail_of_receivable_report
+#: model_terms:ir.ui.view,arch_db:biz_detail_of_receivable_report.report_account_reports
+msgid "Ghi chú"
+msgstr ""
+
+#. module: biz_detail_of_receivable_report
+#: model_terms:ir.ui.view,arch_db:biz_detail_of_receivable_report.debt_notif_reports
+msgid "Hai bên thống nhất đối chiếu công nợ từ"
+msgstr ""
+
+#. module: biz_detail_of_receivable_report
+#: model:ir.model.fields,field_description:biz_detail_of_receivable_report.field_account_reports_wizard__id
+#: model:ir.model.fields,field_description:biz_detail_of_receivable_report.field_debt_notif_wizard__id
+msgid "ID"
+msgstr ""
+
+#. module: biz_detail_of_receivable_report
+#. odoo-python
+#: code:addons/biz_detail_of_receivable_report/models/account_report.py:0
+#, python-format
+msgid "Is Customer"
+msgstr "Là khách hàng"
+
+#. module: biz_detail_of_receivable_report
+#. odoo-python
+#: code:addons/biz_detail_of_receivable_report/models/account_report.py:0
+#, python-format
+msgid "Is Vendor"
+msgstr "Là NCC"
+
+#. module: biz_detail_of_receivable_report
+#: model:ir.model,name:biz_detail_of_receivable_report.model_account_move_line
+msgid "Journal Item"
+msgstr "Bút toán"
+
+#. module: biz_detail_of_receivable_report
+#: model_terms:ir.ui.view,arch_db:biz_detail_of_receivable_report.debt_notif_reports
+msgid ""
+"Kính mong Quý khách hàng đối chiếu và phản hồi về Phòng kế toán theo số điện"
+" thoại: 0968.031.035 nếu có sai lệch. Xin trân trọng cảm ơn!"
+msgstr ""
+
+#. module: biz_detail_of_receivable_report
+#: model_terms:ir.ui.view,arch_db:biz_detail_of_receivable_report.report_account_reports
+msgid "Kế toán trưởng"
+msgstr ""
+
+#. module: biz_detail_of_receivable_report
+#: model:ir.model.fields,field_description:biz_detail_of_receivable_report.field_account_reports_wizard____last_update
+#: model:ir.model.fields,field_description:biz_detail_of_receivable_report.field_debt_notif_wizard____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: biz_detail_of_receivable_report
+#: model:ir.model.fields,field_description:biz_detail_of_receivable_report.field_account_reports_wizard__write_uid
+#: model:ir.model.fields,field_description:biz_detail_of_receivable_report.field_debt_notif_wizard__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: biz_detail_of_receivable_report
+#: model:ir.model.fields,field_description:biz_detail_of_receivable_report.field_account_reports_wizard__write_date
+#: model:ir.model.fields,field_description:biz_detail_of_receivable_report.field_debt_notif_wizard__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: biz_detail_of_receivable_report
+#: model:account.report.column,name:biz_detail_of_receivable_report.partner_ledger_report_matching_number
+msgid "Matching Number"
+msgstr "Số khớp"
+
+#. module: biz_detail_of_receivable_report
+#: model_terms:ir.ui.view,arch_db:biz_detail_of_receivable_report.report_account_reports
+msgid "Mã khách hàng"
+msgstr ""
+
+#. module: biz_detail_of_receivable_report
+#: model_terms:ir.ui.view,arch_db:biz_detail_of_receivable_report.report_account_reports
+msgid "Mã số thuế"
+msgstr ""
+
+#. module: biz_detail_of_receivable_report
+#: model_terms:ir.ui.view,arch_db:biz_detail_of_receivable_report.debt_notif_reports
+msgid "Mã số thuế:"
+msgstr ""
+
+#. module: biz_detail_of_receivable_report
+#: model_terms:ir.ui.view,arch_db:biz_detail_of_receivable_report.debt_notif_reports
+msgid "Ngày hoá đơn"
+msgstr ""
+
+#. module: biz_detail_of_receivable_report
+#: model_terms:ir.ui.view,arch_db:biz_detail_of_receivable_report.report_account_reports
+msgid "Người lập biểu"
+msgstr ""
+
+#. module: biz_detail_of_receivable_report
+#. odoo-python
+#: code:addons/biz_detail_of_receivable_report/models/account_report.py:0
+#, python-format
+msgid "Non Trade Partners"
+msgstr "Đối tác phi thương mại"
+
+#. module: biz_detail_of_receivable_report
+#. odoo-python
+#: code:addons/biz_detail_of_receivable_report/models/account_report.py:0
+#, python-format
+msgid "Non Trade Payable"
+msgstr "Phải trả phi thương mại"
+
+#. module: biz_detail_of_receivable_report
+#. odoo-python
+#: code:addons/biz_detail_of_receivable_report/models/account_report.py:0
+#, python-format
+msgid "Non Trade Receivable"
+msgstr "Phải thu phi thương mại"
+
+#. module: biz_detail_of_receivable_report
+#: model_terms:ir.ui.view,arch_db:biz_detail_of_receivable_report.report_account_reports
+msgid "Nợ"
+msgstr ""
+
+#. module: biz_detail_of_receivable_report
+#. odoo-python
+#: code:addons/biz_detail_of_receivable_report/models/account_report.py:0
+#, python-format
+msgid "PDF"
+msgstr ""
+
+#. module: biz_detail_of_receivable_report
+#: model:account.report,name:biz_detail_of_receivable_report.partner_ledger_detail_customer_report
+#: model:ir.ui.menu,name:biz_detail_of_receivable_report.menu_action_account_report_partner_ledger_detail
+msgid "Partner Ledger"
+msgstr "Tổng hợp công nợ phải thu/phải trả"
+
+#. module: biz_detail_of_receivable_report
+#: model:ir.model,name:biz_detail_of_receivable_report.model_account_partner_ledger_report_handler
+msgid "Partner Ledger Custom Handler"
+msgstr "Trình xử lý tuỳ chỉnh sổ cái đối tác"
+
+#. module: biz_detail_of_receivable_report
+#: model:ir.actions.client,name:biz_detail_of_receivable_report.action_account_report_partner_ledger_detail
+msgid "Partner Ledger Detail"
+msgstr "Tổng hợp công nợ phải thu/phải trả"
+
+#. module: biz_detail_of_receivable_report
+#: model:ir.ui.menu,name:biz_detail_of_receivable_report.account_reports_partners_reports_menu
+msgid "Partner Reports"
+msgstr "Báo cáo đối tác"
+
+#. module: biz_detail_of_receivable_report
+#. odoo-python
+#: code:addons/biz_detail_of_receivable_report/models/account_report.py:0
+#, python-format
+msgid "Payable"
+msgstr "Phải trả"
+
+#. module: biz_detail_of_receivable_report
+#: model_terms:ir.ui.view,arch_db:biz_detail_of_receivable_report.report_account_reports
+msgid "Phát sinh"
+msgstr ""
+
+#. module: biz_detail_of_receivable_report
+#: model_terms:ir.ui.view,arch_db:biz_detail_of_receivable_report.debt_notif_reports
+msgid "Phải thu"
+msgstr ""
+
+#. module: biz_detail_of_receivable_report
+#: model_terms:ir.ui.view,arch_db:biz_detail_of_receivable_report.report_account_reports
+msgid "Phụ trách kế toán"
+msgstr ""
+
+#. module: biz_detail_of_receivable_report
+#. odoo-python
+#: code:addons/biz_detail_of_receivable_report/models/account_report.py:0
+#, python-format
+msgid "Receivable"
+msgstr "Khoản phải thu"
+
+#. module: biz_detail_of_receivable_report
+#: model:account.report.column,name:biz_detail_of_receivable_report.partner_ledger_report_ref_partner
+#: model:ir.model.fields,field_description:biz_detail_of_receivable_report.field_account_move_line__ref_partner
+msgid "Ref Partner"
+msgstr "Mã khách hàng"
+
+#. module: biz_detail_of_receivable_report
+#. odoo-python
+#: code:addons/biz_detail_of_receivable_report/models/account_report.py:0
+#, python-format
+msgid "Save"
+msgstr ""
+
+#. module: biz_detail_of_receivable_report
+#: model_terms:ir.ui.view,arch_db:biz_detail_of_receivable_report.report_account_reports
+msgid "Số dư cuối kỳ"
+msgstr ""
+
+#. module: biz_detail_of_receivable_report
+#: model_terms:ir.ui.view,arch_db:biz_detail_of_receivable_report.report_account_reports
+msgid "Số dư đầu kỳ"
+msgstr ""
+
+#. module: biz_detail_of_receivable_report
+#: model_terms:ir.ui.view,arch_db:biz_detail_of_receivable_report.debt_notif_reports
+msgid "Số hoá đơn"
+msgstr ""
+
+#. module: biz_detail_of_receivable_report
+#: model_terms:ir.ui.view,arch_db:biz_detail_of_receivable_report.debt_notif_reports
+msgid "Số lượng"
+msgstr ""
+
+#. module: biz_detail_of_receivable_report
+#: model_terms:ir.ui.view,arch_db:biz_detail_of_receivable_report.report_account_reports
+msgid "TT"
+msgstr ""
+
+#. module: biz_detail_of_receivable_report
+#: model_terms:ir.ui.view,arch_db:biz_detail_of_receivable_report.debt_notif_reports
+msgid "Thanh toán/Giảm trừ"
+msgstr ""
+
+#. module: biz_detail_of_receivable_report
+#. odoo-python
+#: code:addons/biz_detail_of_receivable_report/models/account_report.py:0
+#, python-format
+msgid "Total Journal Items"
+msgstr "Tổng chi tiết bút toán"
+
+#. module: biz_detail_of_receivable_report
+#. odoo-python
+#: code:addons/biz_detail_of_receivable_report/models/account_report.py:0
+#, python-format
+msgid "Trade Partners"
+msgstr ""
+
+#. module: biz_detail_of_receivable_report
+#: model_terms:ir.ui.view,arch_db:biz_detail_of_receivable_report.report_account_reports
+msgid "Trang: <span class=\"page\"/> / <span class=\"topage\"/>"
+msgstr ""
+
+#. module: biz_detail_of_receivable_report
+#: model_terms:ir.ui.view,arch_db:biz_detail_of_receivable_report.report_account_reports
+msgid "Tên khách hàng"
+msgstr ""
+
+#. module: biz_detail_of_receivable_report
+#: model_terms:ir.ui.view,arch_db:biz_detail_of_receivable_report.debt_notif_reports
+msgid "Tính đến ngày:"
+msgstr ""
+
+#. module: biz_detail_of_receivable_report
+#: model_terms:ir.ui.view,arch_db:biz_detail_of_receivable_report.report_account_reports
+msgid "Từ ngày:"
+msgstr ""
+
+#. module: biz_detail_of_receivable_report
+#: model:account.report.column,name:biz_detail_of_receivable_report.partner_ledger_report_vat_partner
+#: model:ir.model.fields,field_description:biz_detail_of_receivable_report.field_account_move_line__vat_partner
+msgid "Vat Partner"
+msgstr "Mã số thuế"
+
+#. module: biz_detail_of_receivable_report
+#. odoo-python
+#: code:addons/biz_detail_of_receivable_report/models/account_report.py:0
+#: code:addons/biz_detail_of_receivable_report/models/account_report.py:0
+#, python-format
+msgid "XLSX"
+msgstr ""
+
+#. module: biz_detail_of_receivable_report
+#: model_terms:ir.ui.view,arch_db:biz_detail_of_receivable_report.debt_notif_reports
+msgid "XÁC NHẬN CỦA KHÁCH HÀNG"
+msgstr ""
+
+#. module: biz_detail_of_receivable_report
+#: model:ir.model,name:biz_detail_of_receivable_report.model_account_reports_wizard
+msgid "account.reports.wizard"
+msgstr ""
+
+#. module: biz_detail_of_receivable_report
+#: model:ir.model,name:biz_detail_of_receivable_report.model_debt_notif_wizard
+msgid "debt.notif.wizard"
+msgstr ""
+
+#. module: biz_detail_of_receivable_report
+#: model_terms:ir.ui.view,arch_db:biz_detail_of_receivable_report.debt_notif_reports
+msgid "như sau:"
+msgstr ""
+
+#. module: biz_detail_of_receivable_report
+#: model_terms:ir.ui.view,arch_db:biz_detail_of_receivable_report.debt_notif_reports
+msgid "số thanh toán còn lại là:"
+msgstr ""
+
+#. module: biz_detail_of_receivable_report
+#: model_terms:ir.ui.view,arch_db:biz_detail_of_receivable_report.debt_notif_reports
+msgid "Đơn giá"
+msgstr ""
+
+#. module: biz_detail_of_receivable_report
+#: model_terms:ir.ui.view,arch_db:biz_detail_of_receivable_report.report_account_reports
+msgid "Đến ngày:"
+msgstr ""
+
+#. module: biz_detail_of_receivable_report
+#: model_terms:ir.ui.view,arch_db:biz_detail_of_receivable_report.debt_notif_reports
+msgid "Địa chỉ:"
+msgstr ""
+
+#. module: biz_detail_of_receivable_report
+#: model_terms:ir.ui.view,arch_db:biz_detail_of_receivable_report.debt_notif_reports
+msgid "đến ngày"
+msgstr ""

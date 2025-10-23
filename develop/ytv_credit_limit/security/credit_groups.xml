@@ -1,0 +1,7 @@
+<odoo>
+    <record id="group_so_credit_approver" model="res.groups">
+        <field name="name">Sales Credit Approver</field>
+        <field name="category_id" ref="base.module_category_sales_management"/>
+        <field name="comment">Users in this group can confirm Sales Orders that exceed the customer's credit limit.</field>
+    </record>
+</odoo>

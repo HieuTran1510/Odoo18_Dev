@@ -1,0 +1,16 @@
+<odoo>
+    <record id="x_view_partner_form_inherit_company_share" model="ir.ui.view">
+        <field name="name">res.partner.form.inherit.company.share</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+
+            <!-- Chèn 2 trường sau field company_id trong group name='misc' -->
+            <xpath expr="//group[@name='misc']/field[@name='company_id']" position="after">
+                <field name="x_owner_company_id" invisible="0"/>
+                <field name="x_shared_company_ids" widget="many2many_tags" invisible="0"/>
+            </xpath>
+
+        </field>
+    </record>
+</odoo>

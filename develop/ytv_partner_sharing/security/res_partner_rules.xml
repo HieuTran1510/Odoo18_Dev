@@ -1,0 +1,26 @@
+<odoo>
+  <data noupdate="1">
+
+    <!-- Rule riêng cho user nội bộ -->
+    <record id="x_ytv_partner_rule_owner_shared" model="ir.rule">
+      <field name="name">Partner: Owner/Shared Company Access</field>
+      <field name="model_id" ref="base.model_res_partner"/>
+      <field name="groups" eval="[(4, ref('base.group_user'))]"/>
+      <field name="domain_force">
+        [ 
+         '|',
+                 ('user_ids.share', '=', False),
+         '|',   
+                 ('x_owner_company_id', 'in', company_ids),
+         '|',
+                  ('x_shared_company_ids', '=', False),
+                  ('x_shared_company_ids', 'in', company_ids),
+        ]
+      </field>
+      <field name="perm_read" eval="True"/>
+      <field name="perm_write" eval="True"/>
+      <field name="perm_create" eval="True"/>
+      <field name="perm_unlink" eval="False"/>
+    </record>
+  </data>
+</odoo>

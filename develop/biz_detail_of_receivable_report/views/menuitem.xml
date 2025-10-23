@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem id="account_reports_partners_reports_menu" name="Partner Reports" parent="account.menu_finance_reports" sequence="3">
+        <menuitem id="menu_action_account_report_partner_ledger_detail" name="Partner Ledger" action="biz_detail_of_receivable_report.action_account_report_partner_ledger_detail" groups="account.group_account_readonly"/>
+    </menuitem>
+</odoo>

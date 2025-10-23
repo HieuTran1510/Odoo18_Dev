@@ -1,0 +1,15 @@
+<odoo>
+    <record id="view_order_form_credit_info" model="ir.ui.view">
+        <field name="name">sale.order.form.credit.info</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//sheet/group" position="after">
+                <group string="Credit Info">
+                    <field name="so_total_receivable" readonly="1"/>
+                    <field name="so_credit_limit" readonly="1"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+</odoo>

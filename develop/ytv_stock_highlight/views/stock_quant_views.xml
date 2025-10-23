@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data noupdate="0">
+
+    <!-- 1) Bỏ giới hạn groups để tất cả quyền đều dùng view này -->
+    <record id="quant_tree_unrestrict_groups" model="ir.ui.view">
+      <field name="name">stock.quant.tree.unrestrict.groups</field>
+      <field name="model">stock.quant</field>
+      <field name="inherit_id" ref="stock.view_stock_quant_tree_editable"/>
+      <field name="priority">99</field>
+      <field name="arch" type="xml">
+        <xpath expr="/list|/tree" position="attributes">
+          <attribute name="groups"/>
+        </xpath>
+      </field>
+    </record>
+
+    <!-- 2) Thêm highlight đỏ khi Removal Date <= hôm nay -->
+    <record id="quant_tree_add_red_decoration" model="ir.ui.view">
+      <field name="name">stock.quant.tree.add.red.decoration</field>
+      <field name="model">stock.quant</field>
+      <field name="inherit_id" ref="stock.view_stock_quant_tree_editable"/>
+      <field name="priority">100</field>
+      <field name="arch" type="xml">
+        <xpath expr="/list|/tree" position="attributes">
+          <attribute name="decoration-danger">
+            x_removal_date and x_removal_date &lt;= context_today()
+          </attribute>
+        </xpath>
+      </field>
+    </record>
+
+    <!-- 3) (Tuỳ chọn) Cảnh báo cam cho lô sắp đến Removal Date trong 30 ngày tới -->
+    <record id="quant_tree_add_warning_decoration" model="ir.ui.view">
+      <field name="name">stock.quant.tree.add.warning.decoration</field>
+      <field name="model">stock.quant</field>
+      <field name="inherit_id" ref="stock.view_stock_quant_tree_editable"/>
+      <field name="priority">101</field>
+      <field name="arch" type="xml">
+        <xpath expr="/list|/tree" position="attributes">
+          <!-- relativedelta chỉ có trên một số version; nếu không chạy, hãy bỏ record này -->
+          <attribute name="decoration-warning">
+            x_removal_date and x_removal_date &gt; context_today()
+            and x_removal_date &lt;= (context_today() + relativedelta(days=30))
+          </attribute>
+        </xpath>
+      </field>
+    </record>
+
+    <!-- 4) (Tuỳ chọn) Hiển thị cột Removal Date để người dùng thấy rõ -->
+    <record id="quant_tree_show_removal_date_col" model="ir.ui.view">
+      <field name="name">stock.quant.tree.show.removal.date</field>
+      <field name="model">stock.quant</field>
+      <field name="inherit_id" ref="stock.view_stock_quant_tree_editable"/>
+      <field name="priority">102</field>
+      <field name="arch" type="xml">
+        <xpath expr="/list|/tree" position="inside">
+          <field name="x_removal_date" string="Ngày loại bỏ" optional="show"/>
+        </xpath>
+      </field>
+    </record>
+
+  </data>
+</odoo>

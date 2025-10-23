@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<record id="account_reports_wizard_form_view" model="ir.ui.view">
+		<field name="name">account.reports.wizard.form</field>
+		<field name="model">account.reports.wizard</field>
+		<field name="arch" type="xml">
+			<form string="Backdate Operation Wizard">
+				<group>
+					<field name="data" string="CONFIRM: "/>
+				</group>
+				<footer>
+					<button name="action_confirm" string="Validate" type="object"
+						class="btn-primary" />
+					<button string="Cancel" class="btn-default" special="cancel" />
+				</footer>
+			</form>
+		</field>
+	</record>
+</odoo>

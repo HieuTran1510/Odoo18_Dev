@@ -1,0 +1,94 @@
+<odoo>
+    <record id="partner_ledger_detail_customer_report" model="account.report">
+        <field name="name">Partner Ledger</field>
+        <field name="filter_show_draft" eval="True"/>
+        <field name="filter_account_type" eval="True"/>
+        <field name="filter_partner" eval="True"/>
+        <field name="filter_unfold_all" eval="True"/>
+        <field name="filter_unreconciled" eval="True"/>
+        <field name="filter_period_comparison" eval="False"/>
+        <field name="filter_multi_company">selector</field>
+        <field name="custom_button_receiveble" eval="True"/>
+        <field name="custom_filter_partner" eval="True"/>
+        <field name="default_opening_date_filter">this_year</field>
+        <field name="search_bar" eval="True"/>
+        <field name="load_more_limit" eval="80"/>
+
+        <!-- Odoo 17: thay 'main_template' và 'line_template' bằng report_design -->
+        <field name="report_design">default</field>
+
+        <!-- Gắn model xử lý report -->
+        <field name="custom_handler_model_id" ref="account_reports.model_account_partner_ledger_report_handler"/>
+
+        <!-- Khai báo các cột báo cáo -->
+        <field name="column_ids" eval="[(5, 0, 0)]"/>
+    </record>
+
+    <!-- Cấu hình các cột báo cáo -->
+    <record id="partner_ledger_report_account_code" model="account.report.column">
+        <field name="report_id" ref="partner_ledger_detail_customer_report"/>
+        <field name="name">Account</field>
+        <field name="expression_label">account_code</field>
+        <field name="figure_type">none</field>
+    </record>
+
+    <record id="partner_ledger_report_ref_partner" model="account.report.column">
+        <field name="report_id" ref="partner_ledger_detail_customer_report"/>
+        <field name="name">Ref Partner</field>
+        <field name="expression_label">ref_partner</field>
+        <field name="figure_type">none</field>
+    </record>
+
+    <record id="partner_ledger_report_vat_partner" model="account.report.column">
+        <field name="report_id" ref="partner_ledger_detail_customer_report"/>
+        <field name="name">VAT Partner</field>
+        <field name="expression_label">vat_partner</field>
+        <field name="figure_type">none</field>
+    </record>
+
+    <record id="partner_ledger_report_date_maturity" model="account.report.column">
+        <field name="report_id" ref="partner_ledger_detail_customer_report"/>
+        <field name="name">Due Date</field>
+        <field name="expression_label">date_maturity</field>
+        <field name="figure_type">none</field>
+    </record>
+
+    <record id="partner_ledger_report_matching_number" model="account.report.column">
+        <field name="report_id" ref="partner_ledger_detail_customer_report"/>
+        <field name="name">Matching Number</field>
+        <field name="expression_label">matching_number</field>
+        <field name="figure_type">none</field>
+    </record>
+
+    <record id="partner_ledger_report_debit" model="account.report.column">
+        <field name="report_id" ref="partner_ledger_detail_customer_report"/>
+        <field name="name">Debit</field>
+        <field name="expression_label">debit</field>
+        <field name="figure_type">monetary</field>
+        <field name="blank_if_zero" eval="True"/>
+    </record>
+
+    <record id="partner_ledger_report_credit" model="account.report.column">
+        <field name="report_id" ref="partner_ledger_detail_customer_report"/>
+        <field name="name">Credit</field>
+        <field name="expression_label">credit</field>
+        <field name="figure_type">monetary</field>
+        <field name="blank_if_zero" eval="True"/>
+    </record>
+
+    <record id="partner_ledger_report_amount_currency" model="account.report.column">
+        <field name="report_id" ref="partner_ledger_detail_customer_report"/>
+        <field name="name">Amount Currency</field>
+        <field name="expression_label">amount_currency</field>
+        <field name="figure_type">monetary</field>
+        <field name="blank_if_zero" eval="True"/>
+    </record>
+
+    <record id="partner_ledger_report_balance" model="account.report.column">
+        <field name="report_id" ref="partner_ledger_detail_customer_report"/>
+        <field name="name">Balance</field>
+        <field name="expression_label">balance</field>
+        <field name="figure_type">monetary</field>
+        <field name="blank_if_zero" eval="False"/>
+    </record>
+</odoo>

@@ -1,0 +1,12 @@
+<odoo>
+    <!-- Menu cha -->
+    <menuitem id="menu_vn_law_report_root" name="Báo cáo luật định Việt Nam"/>
+
+    <!-- Menu con -->
+    <menuitem
+        id="menu_vn_inventory_s11dn_report"
+        name="Bảng kê nhập - xuất - tồn hàng hóa (S11-DN)"
+        parent="menu_vn_law_report_root"
+        action="action_vietnam_s11dn_report_wizard"
+    />
+</odoo>

@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- <openerp> -->
+<odoo>
+	<data>
+		<template id="report_account_reports">
+			<t t-foreach="docs" t-as="o">
+				<t t-call="web.html_container">
+					<t t-call="web.basic_layout">
+						<div class="page" style="font-family: 'Times New Roman';font-size: 15px; line-height: 1.5;">
+							<div class="row">
+								<div class="col-12">
+									<div>
+										<strong>Đơn vị: </strong>
+										<span t-field="o.env.company.name"/>
+									</div>
+									<div>
+										<strong>Địa chỉ: </strong><span t-esc="get_company_address(o.env.company)"/>
+									</div>
+								</div>
+							</div>
+							<div class="text-center" style="margin-top:30px !important;">
+								<h4 class="text-uppercase font-weight-bold">BẢNG TỔNG HỢP CÔNG NỢ <span t-esc="title"/> KHÁCH HÀNG</h4>
+								<p>Từ ngày: <span t-esc="date_from"/></p>
+								<p>Đến ngày: <span t-esc="date_to"/></p>
+							</div>
+							<table class="table">
+								<thead>
+									<tr style="line-height: 22px;">
+										<th rowspan="2">TT</th>
+										<th rowspan="2">Mã khách hàng</th>
+										<th rowspan="2">Tên khách hàng</th>
+										<th rowspan="2">Mã số thuế</th>
+										<th colspan="2">Số dư đầu kỳ</th>
+										<th colspan="2">Phát sinh</th>
+										<th colspan="2">Số dư cuối kỳ</th>
+										<th class="nowrap" rowspan="2">Ghi chú</th>
+									</tr>
+									<tr>
+										<th>Nợ</th>
+										<th>Có</th>
+										<th>Nợ</th>
+										<th>Có</th>
+										<th>Nợ</th>
+										<th>Có</th>
+									</tr>
+								</thead>
+								<tbody>
+									<t t-foreach="lines" t-as="index">
+										<t t-set="line" t-value="lines[index]"/>
+										<tr>
+											<td class="text-center"><span t-esc="line['a']"/></td>
+											<td><span t-esc="line['b']"/></td>
+											<td><span t-esc="line['c']"/></td>
+											<td><span t-esc="line['d']"/></td>
+											<td class="text-right"><span t-esc="line['1']"/></td>
+											<td class="text-right"><span t-esc="line['2']"/></td>
+											<td class="text-right"><span t-esc="line['3']"/></td>
+											<td class="text-right"><span t-esc="line['4']"/></td>
+											<td class="text-right"><span t-esc="line['5']"/></td>
+											<td class="text-right"><span t-esc="line['6']"/></td>
+											<td class="text-right"><span t-esc="line['l']"/></td>
+										</tr>
+									</t>
+								</tbody>
+							</table>
+							<div class="row bold italic text-center">
+								<div class="col-8"/>
+								<div class="col-4">
+									<p style="font-style: italic;"><span t-esc="format_date(datetime.datetime.now())"/></p>
+								</div>
+							</div>
+							<div class="row text-center">
+								<div class="col-4">
+									<p class="bold">Người lập biểu</p>
+								</div>
+								<div class="col-4">
+									<p class="bold">Phụ trách kế toán</p>
+								</div>
+								<div class="col-4">
+									<p class="bold">Kế toán trưởng</p>
+									<p class="italic">(Ký, họ tên)</p>
+								</div>
+							</div>
+							<div class="footer">
+								<div class="text-right" style="text-align: right">
+									<div class="text-muted">
+										Trang: <span class="page"/> / <span class="topage"/>
+									</div>
+								</div>
+			            	</div>
+						</div>
+						<style>
+							p {
+								margin: 0;
+							}
+							.bold{
+								font-weight: bold;
+							}
+							.text-right {
+								text-align: right;
+							}
+							.nowrap{
+								white-space: nowrap;
+							}
+							table{
+								width: 100%;
+							}
+							thead{
+								text-align: center;
+							}
+							td, th{
+								padding: 5px;
+								vertical-align: middle;
+							}
+							tr, td, th{
+								page-break-inside: avoid;
+								border: 1px  solid;
+
+							}
+						</style>
+					</t>
+				</t>
+			</t>
+		</template>
+		
+<!--		<template id="report_account_reports_pdf">-->
+<!--			<t t-foreach="docs" t-as="o">-->
+<!--				<t t-call="biz_detail_of_receivable_report.report_account_reports"/>-->
+<!--			</t>-->
+<!--		</template>  -->
+
+	</data>
+</odoo>

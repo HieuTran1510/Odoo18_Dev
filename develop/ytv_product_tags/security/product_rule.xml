@@ -1,0 +1,71 @@
+<!-- my_product_tags/security/product_rule.xml -->
+<odoo>
+
+  <!-- User thường thấy sản phẩm nếu:
+       - Thỏa điều kiện công ty (x_owner_company_id hoặc x_shared_company_ids)
+       - VÀ category CHƯA gắn ai  (categ_id.assigned_user_ids = False)  => public
+       - HOẶC category của sản phẩm thuộc danh sách user được gắn
+       - HOẶC ngoại lệ theo từng sản phẩm (allowed_user_ids)
+  -->
+  <record id="rule_pt_company_category_exception" model="ir.rule">
+      <field name="name">PT – company AND (public category OR assigned OR product exception)</field>
+      <field name="model_id" ref="product.model_product_template"/>
+      <field name="groups" eval="[(4, ref('base.group_user'))]"/>
+      <field name="domain_force"><![CDATA[
+          ['&',
+              '|',
+                  ('x_owner_company_id', 'in', company_ids),
+                  '|',
+                      ('x_shared_company_ids', '=', False),
+                      ('x_shared_company_ids', 'in', company_ids),
+              '|','|',
+                  ('categ_id.assigned_user_ids','=',False),
+                  ('categ_id','in', user.product_domain_ids.ids),
+                  ('allowed_user_ids','in',[user.id])
+          ]
+      ]]></field>
+      <field name="perm_read" eval="True"/>
+      <field name="perm_write" eval="True"/>
+      <field name="perm_create" eval="True"/>
+      <field name="perm_unlink" eval="False"/>
+  </record>
+
+  <record id="rule_pp_company_category_exception" model="ir.rule">
+      <field name="name">PP – company AND (public category OR assigned OR product exception)</field>
+      <field name="model_id" ref="product.model_product_product"/>
+      <field name="groups" eval="[(4, ref('base.group_user'))]"/>
+      <field name="domain_force"><![CDATA[
+          ['&',
+              '|',
+                  ('product_tmpl_id.x_owner_company_id', 'in', company_ids),
+                  '|',
+                      ('product_tmpl_id.x_shared_company_ids', '=', False),
+                      ('product_tmpl_id.x_shared_company_ids', 'in', company_ids),
+              '|','|',
+                  ('product_tmpl_id.categ_id.assigned_user_ids','=',False),
+                  ('product_tmpl_id.categ_id','in', user.product_domain_ids.ids),
+                  ('product_tmpl_id.allowed_user_ids','in',[user.id])
+          ]
+      ]]></field>
+      <field name="perm_read" eval="True"/>
+      <field name="perm_write" eval="True"/>
+      <field name="perm_create" eval="True"/>
+      <field name="perm_unlink" eval="False"/>
+  </record>
+
+  <!-- Admin (Settings) luôn xem hết -->
+  <record id="rule_pt_admin_all" model="ir.rule">
+      <field name="name">PT – admin see all</field>
+      <field name="model_id" ref="product.model_product_template"/>
+      <field name="domain_force">[(1,'=',1)]</field>
+      <field name="groups" eval="[(4, ref('base.group_system'))]"/>
+  </record>
+
+  <record id="rule_pp_admin_all" model="ir.rule">
+      <field name="name">PP – admin see all</field>
+      <field name="model_id" ref="product.model_product_product"/>
+      <field name="domain_force">[(1,'=',1)]</field>
+      <field name="groups" eval="[(4, ref('base.group_system'))]"/>
+  </record>
+
+</odoo>

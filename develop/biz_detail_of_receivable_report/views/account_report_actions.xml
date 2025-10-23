@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="action_account_report_partner_ledger_detail" model="ir.actions.client">
+            <field name="name">Partner Ledger Detail</field>
+            <field name="tag">account_report</field>
+            <field name="context" eval="{'report_id': ref('biz_detail_of_receivable_report.partner_ledger_detail_customer_report')}"/>
+        </record>
+
+    </data>
+</odoo>

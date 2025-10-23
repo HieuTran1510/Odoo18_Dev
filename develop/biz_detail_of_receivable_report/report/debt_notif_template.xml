@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- <openerp> -->
+<odoo>
+	<data>
+		<template id="debt_notif_reports">
+			<t t-foreach="docs" t-as="o">
+				<t t-call="web.html_container">
+					<t t-call="web.basic_layout">
+						<t t-foreach="lines_parent" t-as="parent">
+							<div class="page" style="font-family: Roboto !important;font-size: 15px; line-height: 1.5;">
+								<div class="row">
+									<div class="col-12">
+										<div>
+											<strong>Đơn vị: </strong>
+											<span t-field="o.env.company.name"/>
+										</div>
+										<div>
+											<strong>Địa chỉ: </strong><span t-esc="get_company_address(o.env.company)"/>
+										</div>
+									</div>
+								</div>
+								<br/>
+								<div class="text-center" style="margin-top:30px !important;">
+									<h4 class="text-uppercase font-weight-bold"><b>BIÊN BẢN ĐỐI CHIẾU VÀ XÁC NHẬN CÔNG NỢ</b></h4>
+								</div>
+								<div class="row italic text-center">
+									<div class="col-8"/>
+									<div class="col-4">
+										<p style="font-style: italic;"><span t-esc="format_date(datetime.datetime.now())"/></p>
+									</div>
+								</div>
+								<div style="margin-left:20px">
+									<b class="text-uppercase font-weight-bold" style="font-style: bold;font-size: 18px;">BÊN MUA: <span t-esc="get_infor_customer(parent, name_partner=True)"/></b>
+									<p><i>Địa chỉ: <span t-esc="get_infor_customer(parent, address=True)"/></i></p>
+									<p><i>Mã số thuế: <span t-esc="get_infor_customer(parent, vat=True)"/></i></p>
+								</div>
+								<div style="margin-left:20px">
+									<b class="text-uppercase font-weight-bold" style="font-style: bold;font-size: 18px;">BÊN BÁN: <span t-field="o.env.company.name"/></b>
+									<p><i>Địa chỉ: <span t-esc="get_company_address(o.env.company)"/></i></p>
+									<p><i>Mã số thuế: <span t-field="o.env.company.vat"/></i></p>
+								</div>
+								<b style="margin-left:20px" class="font-weight-bold">Hai bên thống nhất đối chiếu công nợ từ <span t-esc="date_from"/> đến ngày <span t-esc="date_to"/> như sau:</b>
+								<table class="table">
+									<thead>
+										<tr style="line-height: 22px;">
+											<th style="width: 10%;" rowspan="2">Ngày hoá đơn</th>
+											<th style="width: 10%;" rowspan="2">Số hoá đơn</th>
+											<th style="width: 20%;" rowspan="2">Diễn giải</th>
+											<th style="width: 10%;" rowspan="2">Số lượng</th>
+											<th style="width: 15%;" rowspan="2">Đơn giá</th>
+											<th style="width: 15%;" rowspan="2">Thành tiền (có VAT)</th>
+											<th style="width: 20%;" rowspan="2">Thanh toán/Giảm trừ</th>
+										</tr>
+									</thead>
+									<tbody>
+										<t t-set="lines" t-value="lines"/>
+										<t t-set="lines_report" t-value="get_line_table(parent, lines)"/>
+										<t t-foreach="lines_report" t-as="index">
+											<t t-set="line" t-value="lines_report[index]"/>
+											<tr class="bold" t-if="line['is_bold']">
+												<td><span t-esc="line['a']"/></td>
+												<td><span t-esc="line['b']"/></td>
+												<td><span t-esc="line['c']"/></td>
+												<td class="text-right"><span t-esc="format_number(line['1'])"/></td>
+												<td class="text-right"><span t-esc="format_number(line['2'])"/></td>
+												<td class="text-right"><span t-esc="format_number(line['3'])"/></td>
+												<td class="text-right"><span t-esc="format_number(line['4'])"/></td>
+											</tr>
+											<tr t-else="">
+												<td><span t-esc="line['a']"/></td>
+												<td><span t-esc="line['b']"/></td>
+												<td><span t-esc="line['c']"/></td>
+												<td class="text-right"><span t-esc="format_number(line['1'])"/></td>
+												<td class="text-right"><span t-esc="format_number(line['2'])"/></td>
+												<td class="text-right"><span t-esc="format_number(line['3'])"/></td>
+												<td class="text-right"><span t-esc="format_number(line['4'])"/></td>
+											</tr>
+										</t>
+									</tbody>
+								</table>
+								<t t-set="last_lines" t-value="get_lasted_lines(lines_report)"/>
+								<p>Bằng chữ: <span t-esc="amount2text(last_lines)"/></p>
+								<p>Tính đến ngày: <span t-esc="date_to"/> số thanh toán còn lại là: <span t-esc="format_number(last_lines)"/></p>
+								<p>Trân trọng cảm ơn!</p>
+								<div class="text-center font-weight-bold" style="margin-top:30px !important;">
+									<b><span t-field="o.env.company.name"/></b><br/>
+								</div>
+								<div class="row text-center font-weight-bold">
+									<div class="col-4">
+										<b class="text-uppercase font-weight-bold">KẾ TOÁN</b>
+									</div>
+									<div class="col-4">
+										<b class="text-uppercase font-weight-bold">NHÂN VIÊN BÁN HÀNG</b>
+									</div>
+									<div class="col-4">
+										<b class="text-uppercase font-weight-bold">GIÁM ĐỐC</b>
+									</div>
+								</div>
+								<div class="text-center font-weight-bold" style="margin-top:120px !important;">
+									<p style="margin-top:50px" class="text-uppercase">XÁC NHẬN CỦA KHÁCH HÀNG</p>
+								</div>
+								</div>
+							<p style="page-break-before:always;"> </p>
+						</t>
+
+						<style>
+							p {
+								margin: 0;
+							}
+							.bold{
+								font-weight: bold;
+							}
+							.text-right {
+								text-align: right;
+							}
+							.nowrap{
+								white-space: nowrap;
+							}
+							table{
+								width: 100%;
+							}
+							thead{
+								text-align: center;
+							}
+							td, th{
+								padding: 5px;
+								vertical-align: middle;
+							}
+							tr, td, th{
+								page-break-inside: avoid;
+								border: 1px  solid;
+
+							}
+						</style>
+					</t>
+				</t>
+			</t>
+		</template>
+	</data>
+</odoo>
